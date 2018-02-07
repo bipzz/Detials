@@ -1,0 +1,219 @@
+<html>
+	<head>
+		<title>
+			Submit Detials
+		</title>
+		
+<style>	
+body{
+background-image:url("pic.png");
+background-repeat:no-repeat;
+background-size:100% 1050px;
+}
+	
+#id{
+text-align:center;
+margin:-15px 400px;
+}
+
+
+#reg{
+width:100%;
+background-color:#051019;
+opacity:0.7;
+padding:50px 0px;
+}		
+
+#na{
+width:250px;
+padding:10px;
+border-radius:5px;
+}
+
+#but{
+color:white;
+font-size:18px;
+}
+
+#q{
+color:white;
+font-size:18px;	
+}
+#c{
+color:orange;
+font-size:18px;
+}
+
+#y{
+color:white;
+font-size:18px;
+}
+
+#butt{
+width:250px;
+padding:10px;
+border-radius:10px;
+background-color:#0c6996;
+border:2px solid #01010c;
+color:aliceblue;
+font-size:18px;  
+}
+
+	h1{
+	color:red;
+	font-size:40px;
+	}	
+	
+	#l{
+	color:red;
+	font-size:30px;
+	}
+	
+	
+</style>		
+	</head>
+
+		<body>
+		<center><h1>Student &nbsp Detials</h1></center>
+			<div id="id">
+				<form id="reg" name="form" method="POST" action="project.php">
+					<input type="text" id="na" name="nam" placeholder="Enter First Name"><span id="l">*</span><br><br>
+					<input type="text" id="na" name="nam1" placeholder="Enter Last Name"><span id="l">*</span><br><br>
+					<input type="text" id="na" name="phone" placeholder="Enter Number"><span id="l">*</span><br><br>
+					<input type="text" id="na" name="mail" placeholder="Enter Email"><span id="l">*</span><br><br>
+<span id="l">*</span><select name="qualification" id="na">
+						<option value=" ">--Select Qualification--</option>
+						<option value="B.Tech">B.TECH</option>
+						<option value="M.Tech">M.TECH</option>
+					</select><br><br>
+					<input type="text" id="na" name="marks" placeholder="Marks"><span id="l">*</span><br><br>
+					
+					
+					<input type="text" id="na" name="university" placeholder="University Name"><span id="l">*</span><br><br>
+					
+<span id="l">*</span><select name="passing" id="na">	<span id="l">*</span>
+						<option value=" ">--Select Year Of Passing--</option> 
+						<option value="2018">2018</option>
+						<option value="2019">2019</option>
+					   </select><br><br>
+<span id="y">Subject Known : </span><input type="checkbox" name="q[]" value="C"/><span id="c">C</span> <input type="checkbox" name="q[]" value="JAVA"/><span id="c">JAVA</span> <input type="checkbox" name="q[]" value="DBMS"/><span id="c">DBMS</span><br>&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	&nbsp&nbsp&nbsp&nbsp<input type="checkbox" name="q[] value="DATA_STRUCTURE"/><span id="c">DATA STRUCTURE</span><br><br>
+<span id="l">*</span>	<input type="radio" name="n" value="Male" id="rd" required><span id="but">MALE&nbsp&nbsp</span><input type="radio" name="n" value="FEMALE" required id="rd"><span id="but">FEMALE</span><br><br>
+			<span id="q">DOB : </span><input type="date" name="dob" id="na" required><span id="l">*</span><br><br>
+			<input type="text" id="na" name="link" placeholder="Enter Linkedin URL"><span id="l">*</span><br><br>
+<span id="l">*</span><span id="y">Applied For :  </span> <input type="radio" name="nn" value="PHP" id="rd" required><span id="but">PHP&nbsp&nbsp</span><input type="radio" name="nn" value="IOS" id="rd" required><span id="but">IOS&nbsp&nbsp</span><br>
+			<span id="l">*</span><span id="y">Upload Resume : </span><<input type="file" name="file" id="na" required /><br>
+
+<br>
+<input type="submit" value="SUBMIT" id="butt" onclick="return func()";>	
+						
+				</form>
+			</div>
+		</body>
+		
+		<script>
+		function func()
+		{
+		var miss=false;
+		var str="";
+			var a=document.form.nam.value;
+			var b=document.form.phone.value;
+			var c=document.form.mail.value;
+		    var d=document.form.qualification.value;
+			var e =document.form.marks.value;
+			var f=document.form.university.value;
+			var g=document.form.passing.value;
+			var h=document.form.nam1.value;
+			var m=document.form.n;
+			var x=document.form.link.value;
+			if(a.length==0)
+			{
+			miss=true;
+			str+= "Enter First Name\n";
+			}
+			else if(!a.match(/^[a-zA-Z]*$/))
+			{
+				miss=true;
+				str+="Enter Name Character\n";
+			}
+			if(h.length==0)
+			{
+				miss=true;
+				str+="Enter Last Nam\n";
+			}
+			else if(!h.match(/^[a-zA-Z]*$/))
+			{
+				miss=true;
+				str+="Enter Name Character\n";
+			}
+			if(b.length==0)
+			{
+			miss=true;
+			str+="Enter Number\n";
+			}
+			else if(!b.match(/^[0-9]{10}$/))
+			{
+				miss=true;
+				str+="Enter correct Phone Number Numeric\n";
+			}
+			if(c.length==0)
+			{
+			miss=true;
+			str+="Enter Email\n";
+			}
+			else if(!c.match(/^[a-z\_\.0-9]*[@][a-z]*[\.][a-z]{2,4}$/))
+			{
+				miss=true;
+				str+="Enter Correct Mail ID\n";
+			}
+			
+			if(d==0)
+			{
+			miss=true;
+			str+="Select Qualification\n";
+			}
+			if(e.length==0)
+			{
+			miss=true;
+			str+="Enter Marks\n";
+			}
+			else if(!e.match(/^[0-9]*$/))
+			{
+			miss=true;
+			str+="Enter Integer Marks only\n";
+			}
+			if(f.length==0)
+			{
+			miss=true;
+			str+="Enter University Name\n";
+			}
+			else if(!f.match(/^[a-zA-z]*$/))
+			{
+			miss=true;
+			str+="Enter Correct University Name\n";
+			}
+			if(g==0)
+			{
+			miss=true;
+			str+="Select Passing Year\n";
+			}
+			
+			if(x.length==0)
+			{
+				miss=true;
+				str+="Enter Linkedin Profile\n";
+			}
+			
+			
+			if(miss)
+			{
+			alert(str);
+			return false;
+			}
+			return true;
+			
+			
+}
+		
+		</script>
+</html>
